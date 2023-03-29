@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
 	  render() {
 	return (
 	  <div className="footer bg-slate-600">
-		<p>Footer</p>
+		<p>Copyright 2023</p>
 	  </div>
 	);
   }

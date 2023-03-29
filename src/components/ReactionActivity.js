@@ -1,63 +1,73 @@
-//Component that will render a new page that will display the current activity name
-// It will also contain a div that will wait for the user to click on it
-// When the user clicks on it, the div will change color
-// after a random amount of time from 3 to 10 seconds, the div will change to blue color and the user will be able to click on it again
-//After the user clicks on the div, the time it took for the div to change color will be recorded and displayed on the screen
+import { useState, useEffect } from "react";
 
-import React from "react";
-import "../App.css";
-import { Link } from "react-router-dom";
+function ReactionActivity() {
+  const [color, setColor] = useState("custom-brown");
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
+  const [text, setText] = useState("Click to start");
 
-export default class ReactionActivity extends React.Component {
-	  constructor(props) {
-	super(props);
-	this.state = {
-	  time: 0,
-	  color: "green",
-	  isClicked: false,
-	};
-  }
+  useEffect(() => {
+    if (color === "primary-green") {
+      setText("Click now!");
+      setStartTime(Date.now());
+    } else if (color === "red-500") {
+      setEndTime(null);
+      setText("Wait for it...");
+      const timeoutId = setTimeout(() => {
+        setColor("primary-green");
+      }, Math.floor(Math.random() * 8000) + 1000);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [color]);
 
-  //function that will be used to change the color of the div
-  changeColor = () => {
-	let randomTime = Math.floor(Math.random() * 8 + 3);
-	this.setState({ time: randomTime });
-	setTimeout(() => {
-	  this.setState({ color: "blue" });
-	}, randomTime * 1000);
+  const handleClick = () => {
+    if (color === "primary-green") {
+      setEndTime(Date.now());
+      setText("Click again to restart");
+      setColor("custom-brown");
+    } else if (color === "custom-brown") {
+      setColor("red-500");
+    }
   };
 
-  //function that will be used to change the color of the div back to green
-  //and start the timer again
-  resetColor = () => {
-	this.setState({ color: "green", isClicked: false });
+  const handleReset = () => {
+    setColor("custom-brown");
+    setStartTime(null);
+    setEndTime(null);
+    setText("Click to start");
+    console.log(color);
   };
 
-  //function that will be used to record the time it took for the user to click on the div
-  //and display it on the screen
-  recordTime = () => {
-	this.setState({ isClicked: true });
-	let time = this.state.time;
-	alert(`Your time is: ${time} seconds`);
-  };
+  const reactionTime = endTime ? endTime - startTime : null;
+  if(reactionTime < localStorage.getItem("topNumReaction")) {
 
-  render() {
-	return (
-	  <div className="reaction-activity-wrapper flex justify-center align-top my-10 mx-10">
-		<div className="grid grid-cols-2 gap-10">
-		  <div
-			className="reaction-activity"
-			style={{ backgroundColor: this.state.color }}
-			onClick={
-			  this.state.color === "green"
-				? this.changeColor
-				: this.state.isClicked
-				? this.resetColor
-				: this.recordTime
-			}
-		  ></div>
-		</div>
-	  </div>
-	);
-  }
+	localStorage.setItem("topNumReaction", reactionTime);
+	}
+
+  return (
+    <div className="activity-wrapper mt-1">
+		<a className="mx-5 font-semibold" href="/">Back</a>
+        <a className="mx-5 font-semibold" onClick={handleReset}>Reset</a>
+      <div className="text-center font-bold text-2xl">Reaction Time</div>
+      <div className="text-center">
+        Click the box when it turns green!
+      </div>
+      <div className="flex justify-center align-middle ">
+        
+        <div
+          className={`w-64 h-64 my-20 rounded-lg bg-${color} cursor-pointer shadow-2xl`}
+          onClick={handleClick}
+        >
+          <div className="text-xl text-center mt-4">{text}</div>
+          {reactionTime && (
+            <div className="text-xl text-center mt-4">
+              Your reaction time: {reactionTime} ms
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
+
+export default ReactionActivity;

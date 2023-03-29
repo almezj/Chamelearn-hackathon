@@ -5,6 +5,7 @@ import React from "react";
 import ActivityCard from "./ActivityCard";
 import "../App.css";
 import ReactionActivity from "./ReactionActivity";
+import { Link } from "react-router-dom";
 
 export default class Activities extends React.Component {
   constructor(props) {
@@ -14,23 +15,51 @@ export default class Activities extends React.Component {
       activities: [
         {
           name: "Reaction Time",
-          description: "This is the description for activity 1",
-          image: "https://picsum.photos/200/300",
+          description: "How fast are your reactions?",
+          image: "./activityicon.png",
+		  available: true,
         },
         {
-          name: "Memory Game",
-          description: "This is the description for activity 2",
-          image: "https://picsum.photos/200/300",
+          name: "Memory Number Game",
+          description: "Try and remember as many numbers as possible",
+          image: "./activityicon.png",
+		  available: true,
         },
         {
-          name: "Memory Game 2",
-          description: "This is the description for activity 3",
-          image: "https://picsum.photos/200/300",
+          name: "Memory Blocks Game",
+          description: "Try to remember the order of the blocks",
+          image: "./activityicon.png",
+		  available: false,
         },
         {
-          name: "Other Game",
-          description: "This is the description for activity 4",
-          image: "https://picsum.photos/200/300",
+          name: "TBA",
+          description: "Game to be announced",
+          image: "./activityicon.png",
+		  available: false,
+        },
+        {
+          name: "TBA",
+          description: "Game to be announced",
+          image: "./activityicon.png",
+		  available: false,
+        },
+        {
+          name: "TBA",
+          description: "Game to be announced",
+          image: "./activityicon.png",
+		  available: false,
+        },
+        {
+          name: "TBA",
+          description: "Game to be announced",
+          image: "./activityicon.png",
+		  available: false,
+        },
+        {
+          name: "TBA",
+          description: "Game to be announced",
+          image: "./activityicon.png",
+		  available: false,
         },
       ],
     };
@@ -43,16 +72,16 @@ export default class Activities extends React.Component {
 
   handleActivityClick = (activity) => {
     this.setState({ currentActivity: activity.name });
+	if(activity.name == "Reaction Time"){
+		window.location.href = "/ReactionActivity";
+	} else if (activity.name == "Memory Number Game"){
+		window.location.href = "/MemoryActivity";
+	}
   };
 
   render() {
     return (
       <div className="app-wrapper">
-		<div className="activity-component">
-			<a onClick={this.setState({currentActivity: ""})}>Go back</a>
-			<h1>{this.state.currentActivity}</h1>
-			<ReactionActivity />
-		</div>
         <div className="activities-wrapper flex justify-center align-top my-10 mx-10">
           <div className="grid grid-cols-2 gap-10">
             {this.state.activities.map((activity) => (
@@ -61,6 +90,7 @@ export default class Activities extends React.Component {
                 name={activity.name}
                 description={activity.description}
                 image={activity.image}
+				available={activity.available}
                 handleClick={() => this.handleActivityClick(activity)}
               />
             ))}
