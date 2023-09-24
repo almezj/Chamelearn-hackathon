@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Chamelearn: Jungle-Themed Human Benchmark for Kids
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Chamelearn, an engaging and interactive website designed to challenge and develop the cognitive skills of children through fun and educational games set in a vibrant jungle theme.
 
-## Available Scripts
+## Introduction
+Chamelearn provides a playful yet enriching environment for kids to sharpen their cognitive abilities, memory, problem-solving skills, and more. Our jungle-themed platform offers a variety of exciting games that make learning an adventure.
 
-In the project directory, you can run:
+## Key Features
+- **Cognitive Challenges:** Engage in a series of games carefully designed to enhance cognitive skills, memory, and critical thinking.
+- **Progress Tracking:** Keep tabs on your child's progress and monitor their development as they play and learn.
+- **User-Friendly:** The website is intuitively designed with a kid-friendly interface, making it easy for children to navigate independently.
+- **Educational Fun:** Learning has never been this enjoyable, with games that seamlessly blend education and entertainment.
 
-### `npm start`
+## Games
+Explore a variety of games that cater to different cognitive aspects:
+- **Memory Activity:** Enhance memory skills by matching pairs of jungle-themed cards.
+- **Reaction Activity** Test your reaction time by waiting for the green light.
+- **More games coming soon...**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contributing
+We welcome contributions from developers, educators, and designers who share our passion for making learning fun for kids. Please refer to our [Contribution Guidelines](CONTRIBUTING.md) for more information on how to get involved.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## License
+Chamelearn is released under the [MIT License](LICENSE), which means you are free to use, modify, and distribute this project. Please review the license for more details.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy the jungle adventure and watch your child's cognitive skills flourish with Chamelearn!
